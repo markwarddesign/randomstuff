@@ -1,0 +1,17 @@
+{
+    "name": "Mark Ward",
+    "version": "1.0.0",
+    "description": "A Gulp file and project generator.",
+    "main": "gulpfile.js",
+    "author": "Mark Ward",
+    "license": "ISC",
+    "scripts": {
+        "watch": "gulp watch"
+      },
+    "devDependencies": {
+      "gulp": "4.0.2",
+      "gulp-plumber": "1.2.1",
+      "gulp-rename": "2.0.0",
+      "gulp-uglify": "1.2.0"
+    }
+  }
