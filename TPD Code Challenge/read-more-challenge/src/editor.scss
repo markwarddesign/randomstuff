@@ -1,0 +1,64 @@
+$link_color: #883132;
+$font-size:1em;
+$lh: 1em;
+$input_bg: #e7f7ff;
+
+.wp-block-create-block-read-more-challenge {
+	span{
+		font-weight: bold;
+	}
+	font-size:$font-size;
+	font-family:sans-serif;
+	line-height: 1em;
+	a{
+		text-decoration: none;
+		color:$link_color;
+		font-weight:bold;
+	}
+
+	form{
+		margin-bottom:1em;
+	}
+
+	&.is-selected{
+		padding:10px;
+		border:2px solid #efefef;
+		.block-editor-url-input__button{
+			display:block;
+			
+			button.components-toolbar__control{
+				display:flex;
+
+			}
+
+		}
+	}
+	.components-base-control__field{
+		margin:0;
+		width:100%;
+		input[type=text]{
+			width: 100%;
+			background: $input_bg;
+			height: 34px;
+		}
+	}
+
+	.block-editor-url-input__button{
+		display:none;
+		button.components-toolbar__control{
+			margin-bottom:1em;
+			&::after{
+				content:' EDIT POST READ MORE LINK';
+			}
+		}
+	}
+}
+
+.tpd-readmore{
+	 .block-editor-link-control{
+		min-width:300px;
+	 }
+	 .block-editor-link-control__search-item.is-current{
+		padding:0px 10px 15px;
+	 }
+}
