@@ -180,16 +180,19 @@ new TBD_events_fields;
 * Update Archive Title if Custom Field has value
 */
 function tbd_events_title( $title, $id = null ) {
- 
-    if ( is_post_type_archive( 'tpd_events' ) ) {
-         // Do stuff
-         $custom_title = get_post_meta( get_the_ID(), 'tbd_custom-event-title', true );
-        // Check if the custom field has a value.
-        if ( ! empty( $custom_title) ) {
-            return $custom_title;
-        }
+ if ( ! is_admin() && ! is_null( $id ) ) {
+    if ( is_post_type_archive( 'tpd_events' ) || is_singular('tpd_events')) {
+		$post = get_post( $id );
+		if ( $post instanceof WP_Post && ( $post->post_type == 'tpd_events' ) ) {
+			// Do stuff
+			$custom_title = get_post_meta( get_the_ID(), 'tbd_custom-event-title', true );
+			// Check if the custom field has a value.
+			if ( ! empty( $custom_title) ) {
+				return $custom_title;
+			}
+		}
     }
- 
+ }
     return $title;
 }
 add_filter( 'the_title', 'tbd_events_title', 10, 2 );
